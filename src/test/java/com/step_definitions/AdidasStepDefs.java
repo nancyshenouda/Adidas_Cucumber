@@ -67,7 +67,7 @@ public class AdidasStepDefs {
     }
     @Then("user clicks on delete")
     public void user_clicks_on_delete() throws InterruptedException {
-        Driver.getDriver().findElement(By.xpath("//tbody[@id='tbodyid']//td[.='Dell i7 8gb']/../td[4]")).click();
+        Driver.getDriver().findElement(By.xpath("(//a[.='Delete'])[2]")).click();
         Thread.sleep(1000);
     }
 
@@ -102,13 +102,13 @@ public class AdidasStepDefs {
         String confirmation = Driver.getDriver().findElement(By.xpath("//p[@class='lead text-muted ']")).getText();
         String [] confirmationArray = confirmation.split("\n");
         String actualAmount = confirmationArray[1];
-        String expectedAmount= "1490 USD";
+        String expectedAmount= "790 USD";
         Assert.assertTrue(actualAmount.contains(expectedAmount));
 
     }
     @Then("User click Ok")
     public void user_click_ok() {
-        System.out.println("");
+        Driver.getDriver().findElement(By.xpath("//button[@class='confirm btn btn-lg btn-primary']")).click();
     }
 
 }
