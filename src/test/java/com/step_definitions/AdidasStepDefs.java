@@ -14,6 +14,7 @@ import org.openqa.selenium.WebElement;
 public class AdidasStepDefs {
 
 
+    AdidasSearchPage object = new AdidasSearchPage();
 
     @Then("User should see title is Adidas")
     public void user_should_see_title_is_adidas() {
@@ -31,20 +32,20 @@ public class AdidasStepDefs {
     }
     @Then("User navigates to Laptops")
     public void user_navigates_to_laptops() throws InterruptedException {
-        AdidasSearchPage object = new AdidasSearchPage();
+       // AdidasSearchPage object = new AdidasSearchPage();
        object.laptops.click();
         Thread.sleep(1000);
 
     }
     @Then("User sees Sony vaio i5")
     public void user_sees_sony_vaio_i5() throws InterruptedException {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.SonyVaioI5.click();
         Thread.sleep(1000);
     }
     @Then("user clicks on Add to cart")
     public void user_clicks_on_add_to_cart() throws InterruptedException {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.addToCart.click();
         Thread.sleep(1000);
     }
@@ -56,29 +57,29 @@ public class AdidasStepDefs {
     }
     @Given("User navigates back to home page")
     public void user_navigates_back_to_home_page() {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.homeButton.click();
     }
     @Then("User clicks on Laptops")
     public void user_clicks_on_laptops() throws InterruptedException {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.laptops.click();
         Thread.sleep(1000);
     }
     @Then("User clicks Dell i7 8gb")
     public void user_clicks_dell_i7_8gb() {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.dellLaptop.click();
     }
     @Given("User navigates to cart")
     public void user_navigates_to_cart() throws InterruptedException {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.cartButton.click();
         Thread.sleep(1000);
     }
     @Then("user clicks on delete")
     public void user_clicks_on_delete() throws InterruptedException {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.deleteButton.click();
         Thread.sleep(1000);
     }
@@ -90,13 +91,13 @@ public class AdidasStepDefs {
     @Then("User clicks on place order")
     public void user_clicks_on_place_order() throws InterruptedException {
 
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.placeOrder.click();
         Thread.sleep(1000);
     }
     @Then("user fills all the form details")
     public void user_fills_all_the_form_details() {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.name.sendKeys("Nancy");
         object.country.sendKeys("USA");
         object.city.sendKeys("VA" );
@@ -107,7 +108,7 @@ public class AdidasStepDefs {
     }
     @Then("user clicks Ok")
     public void user_clicks_ok() {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         object.okButton.click();
     }
     @Given("User got the payment confirmation")
@@ -116,7 +117,7 @@ public class AdidasStepDefs {
     }
     @Then("User should see purchase ID and amount")
     public void user_should_see_purchase_id_and_amount() {
-        AdidasSearchPage object = new AdidasSearchPage();
+
         String confirmation = object.confirmation.getText();
         String [] confirmationArray = confirmation.split("\n");
         int actualAmount = Integer.parseInt(confirmationArray[1].split(" ")[1]);
